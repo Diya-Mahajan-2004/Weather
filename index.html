@@ -3,46 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather-App</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card">
-        <div class="search">
-            <input type="text"  placeholder="Enter City/State Name" spellcheck="false">
-            <button><img src="images/search.png" alt=""></button>
-        </div>
+    <main class="card">
+        <section class="search">
+            <input type="text" placeholder="Enter City/State Name" spellcheck="false" autocorrect="off" autocapitalize="none">
+            <button><img src="images/search.png" alt="Search"></button>
+        </section>
 
-        <div class="error">
-            <p>Invalid city name</p>
-        </div>
+        <section class="error">
+            <p>Invalid city name. Please try again.</p>
+        </section>
 
-        <div class="weather">
-            <img src="" class="weather-icon">
+        <section class="loading">
+            <iframe src="https://giphy.com/embed/xTk9ZvMnbIiIew7IpW" width="80" height="80" frameborder="0" class="giphy-embed" allowfullscreen></iframe>
+        </section>
+
+        <section class="weather">
+            <img src="" class="weather-icon" alt="Weather Icon">
             <h1 class="temp">11°C</h1>
             <h2 class="city">New York</h2>
 
             <div class="details">
                 <div class="col">
-                    <img src="images/humidity.png" alt="">
+                    <img src="images/humidity.png" alt="Humidity">
                     <div>
-                        <p class="humidity">
-                            50%
-                        </p>
+                        <p class="humidity">50%</p>
                         <p>Humidity</p>
                     </div>
                 </div>
                 <div class="col">
-                    <img src="images/wind.png" alt="">
+                    <img src="images/wind.png" alt="Wind Speed">
                     <div>
-                        <p class="wind">
-                            15km/hr
-                        </p>
+                        <p class="wind">15 km/h</p>
                         <p>Wind Speed</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
- <script src="script.js"></script>
-
+            <div class="forecast-graph">
+                <canvas id="temperature-chart"></canvas>
+            </div>
+            
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
