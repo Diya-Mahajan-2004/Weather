@@ -1,182 +1,87 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    background: linear-gradient(to bottom right, #b2cfff, #001b3e);
+    font-family: Arial, sans-serif;
+    background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
 }
 
 .card {
-    width: 90%;
-    max-width: 500px;
-    background: linear-gradient(to bottom right, #001f52, #8fbaf1);
-    color: #fff;
+    background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     border-radius: 20px;
-    padding: 40px 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 20px;
+    width: 320px;
     text-align: center;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .search {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     margin-bottom: 20px;
 }
 
 .search input {
-    border: 0;
-    outline: 0;
-    background: #ffffff;
-    color: #555;
-    padding: 10px 25px;
-    height: 50px;
-    border-radius: 25px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
     flex: 1;
     margin-right: 10px;
-    font-size: 16px;
-    transition: background 0.3s, color 0.3s;
-}
-
-.search input:focus {
-    background: #f3f3f3;
-    color: #333;
 }
 
 .search button {
-    border: 0;
-    outline: 0;
-    background: #ffffff;
+    background-color: #d7d7d7;
+    border: none;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    padding: 12px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s;
-}
-
-.search button:hover {
-    transform: scale(1.1);
 }
 
 .search button img {
     width: 20px;
+    height: 20px;
+}
+
+.error, .loading {
+    display: none;
 }
 
 .weather-icon {
     width: 150px;
-    margin-top: 20px;
-    animation: float 4s infinite;
-}
-
-.weather h1 {
-    font-size: 60px;
-    font-weight: 500;
-    margin: 20px 0;
-    transition: color 0.3s;
-}
-
-.weather h1:hover {
-    color: #ffeb3b;
-}
-
-.weather h2 {
-    font-size: 36px;
-    font-weight: 300;
+    height: 150px;
     margin-bottom: 20px;
 }
 
 .details {
     display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
+    justify-content: space-around;
+    margin-top: 20px;
 }
 
 .col {
-    background: linear-gradient(to bottom right, #001132, #b7d8ff);
-    border-radius: 10px;
-    padding: 15px;
     display: flex;
     align-items: center;
-    width: 48%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, background 0.3s;
-}
-
-.col:hover {
-    transform: scale(1.05);
-    background: linear-gradient(to bottom right, #2d5fae, #4a92f0);
 }
 
 .col img {
-    width: 40px;
-    margin-right: 15px;
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
 
-.humidity, .wind {
-    font-size: 22px;
-    margin-top: -4px;
+.forecast-graph {
+    margin-top: 20px;
 }
 
-.weather {
-    display: none;
-}
-
-.error {
-    text-align: left;
-    margin: 10px;
-    font-size: 14px;
-    margin-top: 10px;
-    color: #ff4d4d;
-    display: none;
-    animation: shake 0.5s;
-}
-
-.loading {
-    display: none;
-    text-align: center;
-}
-
-.loading iframe {
-    width: 80px;
-    height: 80px;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes shake {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    25% {
-        transform: translateX(-5px);
-    }
-    50% {
-        transform: translateX(5px);
-    }
-    75% {
-        transform: translateX(-5px);
-    }
+canvas {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
 }
